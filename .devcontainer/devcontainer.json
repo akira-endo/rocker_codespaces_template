@@ -1,7 +1,16 @@
 {
+	"name": "RStudio Environment",
 	"build": {
 		"context": "..",
 		"dockerfile": "Dockerfile"
 	},
-	"forwardPorts": [8787]
+	"forwardPorts": [8787],
+	"portsAttributes": {
+		"8888": {
+			"label": "RStudio",
+			"requireLocalPort": true,
+			"onAutoForward": "ignore"
+		}
+	},
+	"postAttachCommand": "sudo rstudio-server start"
 }

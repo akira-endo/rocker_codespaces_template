@@ -1,2 +1,2 @@
-FROM rocker/rstudio:4
+FROM rocker/tidyverse:4
 
